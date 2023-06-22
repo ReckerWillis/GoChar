@@ -40,7 +40,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="donasi.html" class="logo d-flex align-items-center">
+        <a href="donasi.php" class="logo d-flex align-items-center">
           <img src="../assets/img/gocharrrr.png" alt="gocharlogo" />
           <span class="d-none d-lg-block">GoChar</span>
         </a>
@@ -55,7 +55,7 @@
     <aside id="sidebar" class="sidebar">
       <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="donasi.html">
+          <a class="nav-link" href="donasi.php">
             <i class="bi bi-cash-coin"></i>
             <span>Donasi</span>
           </a>
@@ -66,10 +66,10 @@
           <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-box2-heart"></i><span>Galang Dana</span><i class="bi bi-chevron-down ms-auto"></i> </a>
           <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
             <li>
-              <a href="menu_buatgalangdana.html"> <i class="bi bi-circle"></i><span>Buat Galang Dana</span> </a>
+              <a href="../- Eki/menu_buatGalangDana.php"> <i class="bi bi-circle"></i><span>Buat Galang Dana</span> </a>
             </li>
             <li>
-              <a href="menu_galangdanasaya.html"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
+              <a href="../- Eki/menu_galangdanasaya.php"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
             </li>
           </ul>
         </li>
@@ -110,7 +110,7 @@
   
     <main id="main" class="main">
       <div class="container">
-          <a href="C:\Users\User\OneDrive\Documents\Semester 3\PABW\TugasBesar\pilihpembayaran.html" class="btn"><span class="bi-box-arrow-in-left "></span></a>
+          <a href="informasiDonasi.php" class="btn"><span class="bi-box-arrow-in-left "></span></a>
       </div>
       <!-- End Page Title -->
 
@@ -175,7 +175,9 @@
                         <p>5. Periksa kembali detail pembayaran, lalu konfirmasi dan bayar</p>
                         <p>6. Transaksi berhasil.</p>
                       </div>
+
                       <form action="" method="post">
+
                       <div class="d-grid gap-2 mt-3">
                             <label for="inputText" class="col-sm col-form-label"><strong>Masukkan Nominal Donasi</strong></label>
                             <div class="col-sm">
@@ -183,37 +185,10 @@
                             </div>
                           </div>
                       <div class="d-grid gap-2 mt-3">
-                        <button class="btn btn-primary" type="submit" name="btn-sbt">Lanjut Pembayaran</button>
+                        <button class="btn btn-primary" type="submit" name="btn-sbt">Bayar dengan QRIS</button>
                       </div>
-                      </form>
-                      <br>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><strong>GOPAY</strong></button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <h5 class="card-title">Pembayaran Donasi via QRIS</h5>
-                        <p>1. Masukkan <strong>Nominal Donasi</strong> yang berada di bawah lalu klik tombol <strong>Bayar dengan QRIS</strong></p>
-                        <p>2. Kemudian akan terlihat QR Code di layar</p>
-                        <p>3. Buka Aplikasi Dompet Elektronik yang dimiliki dan mendukung fasilitas QRIS</strong></p>
-                        <p>4. Pindai/Scan QR Code dari QRIS tersebut</p>
-                        <p>5. Periksa kembali detail pembayaran, lalu konfirmasi dan bayar</p>
-                        <p>6. Transaksi berhasil.</p>
-                      </div>
-                      <form action="" method="post">
-                      <div class="d-grid gap-2 mt-3">
-                            <label for="inputText" class="col-sm col-form-label"><strong>Masukkan Nominal Donasi</strong></label>
-                            <div class="col-sm">
-                              <input type="text" class="form-control" value="" name="nominal">
-                            </div>
-                          </div>
-                      <div class="d-grid gap-2 mt-3">
-                      <button class="btn btn-primary" type="submit" name="btn-sbt">Lanjut Pembayaran</button>
-                      </div>
-                      </form>
+                      
+                    </form>
                       <br>
                     </div>
                   </div>

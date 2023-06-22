@@ -44,7 +44,7 @@ include('../conf/koneksi.php');
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="donasi.html" class="logo d-flex align-items-center">
+        <a href="donasi.php" class="logo d-flex align-items-center">
           <img src="../assets/img/gocharrrr.png" alt="gocharlogo" />
           <span class="d-none d-lg-block">GoChar</span>
         </a>
@@ -59,7 +59,7 @@ include('../conf/koneksi.php');
     <aside id="sidebar" class="sidebar">
       <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="donasi.html">
+          <a class="nav-link" href="donasi.php">
             <i class="bi bi-cash-coin"></i>
             <span>Donasi</span>
           </a>
@@ -70,10 +70,10 @@ include('../conf/koneksi.php');
           <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-box2-heart"></i><span>Galang Dana</span><i class="bi bi-chevron-down ms-auto"></i> </a>
           <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
             <li>
-              <a href="menu_buatgalangdana.html"> <i class="bi bi-circle"></i><span>Buat Galang Dana</span> </a>
+              <a href="../- Eki/menu_buatGalangDana.php"> <i class="bi bi-circle"></i><span>Buat Galang Dana</span> </a>
             </li>
             <li>
-              <a href="menu_galangdanasaya.html"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
+              <a href="../- Eki/menu_galangdanasaya.php"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
             </li>
           </ul>
         </li>

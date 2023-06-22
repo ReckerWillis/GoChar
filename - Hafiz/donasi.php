@@ -44,7 +44,7 @@ include('../conf/koneksi.php');
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="donasi.html" class="logo d-flex align-items-center">
+        <a href="donasi.php" class="logo d-flex align-items-center">
           <img src="../assets/img/gocharrrr.png" alt="gocharlogo" />
           <span class="d-none d-lg-block">GoChar</span>
         </a>
@@ -59,7 +59,7 @@ include('../conf/koneksi.php');
     <aside id="sidebar" class="sidebar">
       <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../- Hafiz/donasi.php">
+          <a class="nav-link" href="donasi.php">
             <i class="bi bi-cash-coin"></i>
             <span>Donasi</span>
           </a>
@@ -73,7 +73,7 @@ include('../conf/koneksi.php');
               <a href="../- Eki/menu_buatGalangDana.php"> <i class="bi bi-circle"></i><span>Buat Galang Dana</span> </a>
             </li>
             <li>
-              <a href="menu_galangdanasaya.html"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
+              <a href="../- Eki/menu_galangdanasaya.php"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
             </li>
           </ul>
         </li>
@@ -141,7 +141,7 @@ include('../conf/koneksi.php');
         <div class="card-body">
           <h5 class="card-title"><?php echo $per_data['judul']?></h5>
 
-          <p class="card-text">Rp.<?php echo $per_datod['SUM(jumlah_donasi)']?> Rp<?php echo $per_data['target_donasi']?></p>
+          <p class="card-text" style="color:#0079FF;">Rp.<?php echo $per_datod['SUM(jumlah_donasi)']?> Rp.<?php echo $per_data['target_donasi']?></p>
           <div class="progress">
             <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
