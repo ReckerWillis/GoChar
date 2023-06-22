@@ -47,7 +47,7 @@ $email = $_SESSION['email']
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="donasi.html" class="logo d-flex align-items-center">
+        <a href="../- Hafiz/donasi.php" class="logo d-flex align-items-center">
           <img src="../assets/img/gocharrrr.png" alt="gocharlogo" />
           <span class="d-none d-lg-block">GoChar</span>
         </a>
@@ -73,10 +73,10 @@ $email = $_SESSION['email']
           <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-box2-heart"></i><span>Galang Dana</span><i class="bi bi-chevron-down ms-auto"></i> </a>
           <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
             <li>
-              <a href="menu_buatgalangdana.html" class="active"> <i class="bi bi-circle"></i><span>Buat Galang Dana</span> </a>
+              <a href="menu_buatGalangDana.php" class="active"> <i class="bi bi-circle"></i><span>Buat Galang Dana</span> </a>
             </li>
             <li>
-              <a href="menu_galangdanasaya.html"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
+              <a href="menu_galangdanasaya.php"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
             </li>
           </ul>
         </li>
