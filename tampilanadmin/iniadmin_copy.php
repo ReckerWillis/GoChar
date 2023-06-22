@@ -47,7 +47,7 @@
       <div class="d-flex flex-column">
         <div class="profile">
           <br></br>
-          <h1 class="text-light"><a href="index.html">Gochar</a></h1>
+          <h1 class="text-light"><a href="../- Fajar/login.html">Gochar</a></h1>
           <p class="text-light text-center">Admin</p>
           
 
@@ -63,7 +63,7 @@
               <a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Misi</span></a>
             </li>
             <li>
-              <a href="login.html" class="nav-link scrollto"><i class="bi bi-box-arrow-right"></i> <span>Logout</span></a>
+              <a href="../- Fajar/login.html" class="nav-link scrollto"><i class="bi bi-box-arrow-right"></i> <span>Logout</span></a>
             </li>
           </ul>
         </nav>
