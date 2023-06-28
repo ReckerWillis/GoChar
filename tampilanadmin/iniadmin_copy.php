@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Admin Page | GoCHAR</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
@@ -55,6 +57,9 @@
           <ul>
             <li>
               <a href="#user" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>User</span></a>
+            </li>
+            <li>
+              <a href="#data" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Chart</span></a>
             </li>
             <li>
               <a href="#gd" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Galang Donasi</span></a>
@@ -131,7 +136,82 @@
           </div>
       </section>
       <!-- End Data User -->
+      <section id="data" class="data">
+        <div class="container">
+          <div class="section-title">
+            <h2>Chart</h2>
+          </div>
 
+          <div class="row no-gutters">
+            <div class=" align-items-md-stretch" data-aos="fade-up">
+            <div class="card">
+              <div class="card-body">
+            <canvas id="barChart"></canvas>
+            <?php
+            // Mengambil data dari tabel pembayaran
+            $sql = "SELECT bank, gopay, ovo, dana, qris FROM pembayaran";
+            $result = $koneksi->query($sql);
+
+            // Memeriksa hasil query
+            if ($result->num_rows > 0) {
+                // Mendapatkan baris data
+                $row = $result->fetch_assoc();
+
+                // Menyimpan data dalam variabel
+                $data_bank = $row['bank'];
+                $data_gopay = $row['gopay'];
+                $data_ovo = $row['ovo'];
+                $data_dana = $row['dana'];
+                $data_qris = $row['qris'];
+            } else {
+                echo "Tidak ada data yang ditemukan.";
+            }
+
+            // Menutup koneksi ke database
+            $koneksi->close();
+            ?>
+          <script>
+            // Ambil data dari SQL dan simpan dalam variabel
+            var bank = <?php echo $data_bank; ?>;
+            var gopay = <?php echo $data_gopay; ?>;
+            var ovo = <?php echo $data_ovo; ?>;
+            var dana = <?php echo $data_dana; ?>;
+            var qris = <?php echo $data_qris; ?>;
+
+            // Inisialisasi data yang akan digunakan di grafik
+            var data = {
+              labels: ['Bank', 'Gopay', 'OVO', 'Dana', 'QRIS'],
+              datasets: [{
+                label: 'Jumlah Pembayaran',
+                data: [bank, gopay, ovo, dana, qris],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna latar belakang batang
+                borderColor: 'rgba(75, 192, 192, 1)', // Warna batas batang
+                borderWidth: 1 // Lebar batas batang
+              }]
+            };
+
+            // Konfigurasi grafik
+            var options = {
+              scales: {
+                y: {
+                  beginAtZero: true // Mulai sumbu y dari 0
+                }
+              }
+            };
+
+            // Membuat grafik batang menggunakan Chart.js
+            var ctx = document.getElementById('barChart').getContext('2d');
+            var barChart = new Chart(ctx, {
+              type: 'bar',
+              data: data,
+              options: options
+            });
+          </script>
+          </div>
+         </div>
+          </div>
+            <!-- </div> -->
+      </section>
       <!-- ======= Galang Donasi ======= -->
       <section id="gd" class="gd">
         <div class="container">
