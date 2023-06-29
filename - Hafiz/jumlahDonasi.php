@@ -372,7 +372,7 @@ elseif(isset($_POST['btn-sbt-2'])){
 
   $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
   mysqli_query($koneksi, $query_sql);
-  echo "<script>window.location.href='pembayaran.php?nominal=$nominal'</script>";    
+  echo "<script>window.location.href='pembayaranQris.php?nominal=$nominal'</script>";    
 }
 elseif(isset($_POST['btn-sbt-3'])){
   $query = "SELECT gopay FROM pembayaran";
@@ -395,7 +395,7 @@ elseif(isset($_POST['btn-sbt-3'])){
 
   $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
   mysqli_query($koneksi, $query_sql);
-  echo "<script>window.location.href='pembayaran.php?nominal=$nominal'</script>";    
+  echo "<script>window.location.href='pembayaranGopay.php?nominal=$nominal'</script>";    
 }
 elseif(isset($_POST['btn-sbt-4'])){
   $query = "SELECT ovo FROM pembayaran";
@@ -418,7 +418,7 @@ elseif(isset($_POST['btn-sbt-4'])){
 
   $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
   mysqli_query($koneksi, $query_sql);
-  echo "<script>window.location.href='pembayaran.php?nominal=$nominal'</script>";    
+  echo "<script>window.location.href='pembayaranOvo.php?nominal=$nominal'</script>";    
 }
 elseif(isset($_POST['btn-sbt-5'])){
   $query = "SELECT dana FROM pembayaran";
@@ -441,7 +441,7 @@ elseif(isset($_POST['btn-sbt-5'])){
 
   $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
   mysqli_query($koneksi, $query_sql);
-  echo "<script>window.location.href='pembayaran.php?nominal=$nominal'</script>";    
+  echo "<script>window.location.href='pembayaranDana.php?nominal=$nominal'</script>";    
 }else{
     echo "Pendaftaran Gagal";
 }

@@ -194,6 +194,12 @@
 
             // Konfigurasi grafik
             var options = {
+              plugins: {
+                title: {
+                  display: true,
+                  text: 'Data metode pembayaran yang paling sering digunakan'
+                }
+              },
               scales: {
                 y: {
                   beginAtZero: true // Mulai sumbu y dari 0
