@@ -236,10 +236,23 @@
 include('../conf/koneksi.php');
 
 if(isset($_POST['btn-sbt'])){
-    
+    $query = "SELECT bank FROM pembayaran";
+    $result = mysqli_query($koneksi, $query);
+    if ($result) {
+      $row = mysqli_fetch_assoc($result);
+      $bank = $row['bank'];
+  
+      // Menambahkan nilai dengan 1
+      $tbank = $bank + 1;
+  
+      // Update nilai yang sudah ditambahkan ke database
+      $updateQuery = "UPDATE pembayaran SET bank ='$tbank'";
+      $updateResult = mysqli_query($koneksi, $updateQuery);
+  }
     $nominal = $_POST['nominal'];
     $id_gd = $_GET['id_gd'];
     $email = $_GET['email'];
+    
 
     $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
     mysqli_query($koneksi, $query_sql);

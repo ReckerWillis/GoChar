@@ -136,6 +136,8 @@
           </div>
       </section>
       <!-- End Data User -->
+
+      <!-- Nampilin Chart -->
       <section id="data" class="data">
         <div class="container">
           <div class="section-title">
@@ -212,6 +214,7 @@
           </div>
             <!-- </div> -->
       </section>
+      <!-- End nampilin Chart -->
       <!-- ======= Galang Donasi ======= -->
       <section id="gd" class="gd">
         <div class="container">
