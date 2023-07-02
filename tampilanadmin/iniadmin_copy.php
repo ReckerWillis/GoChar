@@ -137,11 +137,13 @@
       </section>
       <!-- End Data User -->
 
-      //chart kategori
       <main id="main">
     <!-- ======= About Section ======= -->
-    <section id="user" class="user">
+    <section id="data" class="data">
       <div class="container">
+      <div class="section-title">
+            <h2>Chart</h2>
+          </div>
         <div class="section-title">
           <div class="card">
             <div class="card-body">
@@ -174,7 +176,7 @@
           </div>
         </div>
       </div>
-    </section>
+
     <!-- End About Section -->
 
     <!-- Vendor JS Files -->
@@ -224,11 +226,9 @@
     </script>
 
       <!-- Nampilin Chart -->
-      <section id="data" class="data">
+
         <div class="container">
-          <div class="section-title">
-            <h2>Chart</h2>
-          </div>
+
 
           <div class="row no-gutters">
             <div class=" align-items-md-stretch" data-aos="fade-up">
