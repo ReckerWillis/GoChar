@@ -139,24 +139,183 @@
 
       <!-- Nampilin Chart -->
       <section id="data" class="data">
-      <div class="container">
+        <div class="container">
           <div class="section-title">
             <h2>Chart</h2>
           </div>
+        <div class="section-title">
+          <div class="card">
+            <div class="card-body">
+              <?php
+              include('conf/koneksi.php');
+      //Ambil data kategori dari tabel galang_donasi
+              $query = mysqli_query($koneksi, "SELECT kategori FROM galang_donasi");
+
+              // Buat array untuk menyimpan jumlah kategori
+              $kategoriCount = array();
+
+              // Menghitung jumlah kategori
+              while ($row = mysqli_fetch_assoc($query)) {
+                $kategori = $row['kategori'];
+                if (array_key_exists($kategori, $kategoriCount)) {
+                  $kategoriCount[$kategori]++;
+                } else {
+                  $kategoriCount[$kategori] = 1;
+                }
+              }
+
+              // Menghasilkan data dalam format yang sesuai untuk visualisasi
+              $labels = array_keys($kategoriCount);
+              $data = array_values($kategoriCount);
+              ?>
+
+              <!-- Tampilkan grafik menggunakan Chart.js -->
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- End About Section -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Script untuk membuat grafik menggunakan Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      var labels = <?php echo json_encode($labels); ?>;
+      var data = <?php echo json_encode($data); ?>;
+
+      // Membuat grafik batang menggunakan Chart.js
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Jumlah',
+            data: data,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              stepSize: 1
+            }
+          }
+        }
+      });
+    </script>
+
+      <!-- Nampilin Chart -->
+
+        <div class="container">
+
 
           <div class="row no-gutters">
             <div class=" align-items-md-stretch" data-aos="fade-up">
             <div class="card">
               <div class="card-body">
-              <section id="user" class="user">
+            <canvas id="barChart"></canvas>
+            <?php
+            // Mengambil data dari tabel pembayaran
+            $sql = "SELECT bank, gopay, ovo, dana, qris FROM pembayaran";
+            $result = $koneksi->query($sql);
+
+            // Memeriksa hasil query
+            if ($result->num_rows > 0) {
+                // Mendapatkan baris data
+                $row = $result->fetch_assoc();
+
+                // Menyimpan data dalam variabel
+                $data_bank = $row['bank'];
+                $data_gopay = $row['gopay'];
+                $data_ovo = $row['ovo'];
+                $data_dana = $row['dana'];
+                $data_qris = $row['qris'];
+            } else {
+                echo "Tidak ada data yang ditemukan.";
+            }
+
+            // Menutup koneksi ke database
+            $koneksi->close();
+            ?>
+          <script>
+            // Ambil data dari SQL dan simpan dalam variabel
+            var bank = <?php echo $data_bank; ?>;
+            var gopay = <?php echo $data_gopay; ?>;
+            var ovo = <?php echo $data_ovo; ?>;
+            var dana = <?php echo $data_dana; ?>;
+            var qris = <?php echo $data_qris; ?>;
+
+            // Inisialisasi data yang akan digunakan di grafik
+            var data = {
+              labels: ['Bank', 'Gopay', 'OVO', 'Dana', 'QRIS'],
+              datasets: [{
+                label: 'Jumlah Pembayaran',
+                data: [bank, gopay, ovo, dana, qris],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna latar belakang batang
+                borderColor: 'rgba(75, 192, 192, 1)', // Warna batas batang
+                borderWidth: 1 // Lebar batas batang
+              }]
+            };
+
+            // Konfigurasi grafik
+            var options = {
+              plugins: {
+                title: {
+                  display: true,
+                  text: 'Data metode pembayaran yang paling sering digunakan'
+                }
+              },
+              scales: {
+                y: {
+                  beginAtZero: true // Mulai sumbu y dari 0
+                }
+              }
+            };
+
+            // Membuat grafik batang menggunakan Chart.js
+            var ctx = document.getElementById('barChart').getContext('2d');
+            var barChart = new Chart(ctx, {
+              type: 'bar',
+              data: data,
+              options: options
+            });
+          </script>
+          </div>
+         </div>
+          </div>
+            <!-- </div> -->
+      </section>
+      //chart kategori
+      <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="user" class="user">
       <div class="container">
         <div class="section-title">
           <div class="card">
             <div class="card-body">
               <?php
               include('conf/koneksi.php');
-
-              // Ambil data kategori dari tabel galang_donasi
+      //Ambil data kategori dari tabel galang_donasi
               $query = mysqli_query($koneksi, "SELECT kategori FROM galang_donasi");
 
               // Buat array untuk menyimpan jumlah kategori
@@ -209,7 +368,7 @@
       // Membuat grafik batang menggunakan Chart.js
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {
-        type: 'doughnut',
+        type: 'bar',
         data: {
           labels: labels,
           datasets: [{
@@ -231,87 +390,7 @@
         }
       });
     </script>
-          </div>
-         </div>
-          </div>
-        <div class="container">
-          <div class="row no-gutters">
-            <div class=" align-items-md-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-body">
-            <canvas id="barChart"></canvas>
-            <?php
-            // Mengambil data dari tabel pembayaran
-            $sql = "SELECT bank, gopay, ovo, dana, qris FROM pembayaran";
-            $result = $koneksi->query($sql);
 
-            // Memeriksa hasil query
-            if ($result->num_rows > 0) {
-                // Mendapatkan baris data
-                $row = $result->fetch_assoc();
-
-                // Menyimpan data dalam variabel
-                $data_bank = $row['bank'];
-                $data_gopay = $row['gopay'];
-                $data_ovo = $row['ovo'];
-                $data_dana = $row['dana'];
-                $data_qris = $row['qris'];
-            } else {
-                echo "Tidak ada data yang ditemukan.";
-            }
-
-            // Menutup koneksi ke database
-            ?>
-          <script>
-            // Ambil data dari SQL dan simpan dalam variabel
-            var bank = <?php echo $data_bank; ?>;
-            var gopay = <?php echo $data_gopay; ?>;
-            var ovo = <?php echo $data_ovo; ?>;
-            var dana = <?php echo $data_dana; ?>;
-            var qris = <?php echo $data_qris; ?>;
-
-            // Inisialisasi data yang akan digunakan di grafik
-            var data = {
-              labels: ['Bank', 'Gopay', 'OVO', 'Dana', 'QRIS'],
-              datasets: [{
-                label: 'Jumlah Pembayaran',
-                data: [bank, gopay, ovo, dana, qris],
-                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna latar belakang batang
-                borderColor: 'rgba(75, 192, 192, 1)', // Warna batas batang
-                borderWidth: 1 // Lebar batas batang
-              }]
-            };
-
-            // Konfigurasi grafik
-            var options = {
-              plugins: {
-                title: {
-                  display: true,
-                  text: 'Data metode pembayaran yang paling sering digunakan'
-                }
-              },
-              scales: {
-                y: {
-                  beginAtZero: true // Mulai sumbu y dari 0
-                }
-              }
-            };
-
-            // Membuat grafik batang menggunakan Chart.js
-            var ctx = document.getElementById('barChart').getContext('2d');
-            var barChart = new Chart(ctx, {
-              type: 'bar',
-              data: data,
-              options: options
-            });
-          </script>
-          </div>
-         </div>
-          </div>
-            <!-- </div> -->
-      </section>
-      
-      
       <!-- End nampilin Chart -->
       <!-- ======= Galang Donasi ======= -->
       <section id="gd" class="gd">
