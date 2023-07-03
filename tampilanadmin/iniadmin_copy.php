@@ -305,44 +305,6 @@
           </div>
             <!-- </div> -->
       </section>
-      //chart kategori
-      <main id="main">
-    <!-- ======= About Section ======= -->
-    <section id="user" class="user">
-      <div class="container">
-        <div class="section-title">
-          <div class="card">
-            <div class="card-body">
-              <?php
-              include('conf/koneksi.php');
-      //Ambil data kategori dari tabel galang_donasi
-              $query = mysqli_query($koneksi, "SELECT kategori FROM galang_donasi");
-
-              // Buat array untuk menyimpan jumlah kategori
-              $kategoriCount = array();
-
-              // Menghitung jumlah kategori
-              while ($row = mysqli_fetch_assoc($query)) {
-                $kategori = $row['kategori'];
-                if (array_key_exists($kategori, $kategoriCount)) {
-                  $kategoriCount[$kategori]++;
-                } else {
-                  $kategoriCount[$kategori] = 1;
-                }
-              }
-
-              // Menghasilkan data dalam format yang sesuai untuk visualisasi
-              $labels = array_keys($kategoriCount);
-              $data = array_values($kategoriCount);
-              ?>
-
-              <!-- Tampilkan grafik menggunakan Chart.js -->
-              <canvas id="myChart"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- End About Section -->
 
     <!-- Vendor JS Files -->
