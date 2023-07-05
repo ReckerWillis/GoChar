@@ -201,7 +201,7 @@
       // Membuat grafik batang menggunakan Chart.js
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'doughnut',
         data: {
           labels: labels,
           datasets: [{
