@@ -185,7 +185,100 @@
                             </div>
                           </div>
                       <div class="d-grid gap-2 mt-3">
-                        <button class="btn btn-primary" type="submit" name="btn-sbt">Bayar dengan QRIS</button>
+                        <button class="btn btn-primary" type="submit" name="btn-sbt-2">Bayar dengan QRIS</button>
+                      </div>
+                      
+                    </form>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><strong>Gopay</strong></button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <h5 class="card-title">Pembayaran Donasi via QRIS</h5>
+                        <p>1. Masukkan <strong>Nominal Donasi</strong> yang berada di bawah lalu klik tombol <strong>Bayar dengan QRIS</strong></p>
+                        <p>2. Kemudian akan terlihat QR Code di layar</p>
+                        <p>3. Buka Aplikasi Dompet Elektronik yang dimiliki dan mendukung fasilitas QRIS</strong></p>
+                        <p>4. Pindai/Scan QR Code dari QRIS tersebut</p>
+                        <p>5. Periksa kembali detail pembayaran, lalu konfirmasi dan bayar</p>
+                        <p>6. Transaksi berhasil.</p>
+                      </div>
+
+                      <form action="" method="post">
+
+                      <div class="d-grid gap-2 mt-3">
+                            <label for="inputText" class="col-sm col-form-label"><strong>Masukkan Nominal Donasi</strong></label>
+                            <div class="col-sm">
+                              <input type="text" class="form-control" value="" name="nominal">
+                            </div>
+                          </div>
+                      <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-primary" type="submit" name="btn-sbt-3">Bayar dengan QRIS</button>
+                      </div>
+                      
+                    </form>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><strong>OVO</strong></button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <h5 class="card-title">Pembayaran Donasi via QRIS</h5>
+                        <p>1. Masukkan <strong>Nominal Donasi</strong> yang berada di bawah lalu klik tombol <strong>Bayar dengan QRIS</strong></p>
+                        <p>2. Kemudian akan terlihat QR Code di layar</p>
+                        <p>3. Buka Aplikasi Dompet Elektronik yang dimiliki dan mendukung fasilitas QRIS</strong></p>
+                        <p>4. Pindai/Scan QR Code dari QRIS tersebut</p>
+                        <p>5. Periksa kembali detail pembayaran, lalu konfirmasi dan bayar</p>
+                        <p>6. Transaksi berhasil.</p>
+                      </div>
+
+                      <form action="" method="post">
+
+                      <div class="d-grid gap-2 mt-3">
+                            <label for="inputText" class="col-sm col-form-label"><strong>Masukkan Nominal Donasi</strong></label>
+                            <div class="col-sm">
+                              <input type="text" class="form-control" value="" name="nominal">
+                            </div>
+                          </div>
+                      <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-primary" type="submit" name="btn-sbt-4">Bayar dengan QRIS</button>
+                      </div>
+                      
+                    </form>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"><strong>DANA</strong></button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <h5 class="card-title">Pembayaran Donasi via QRIS</h5>
+                        <p>1. Masukkan <strong>Nominal Donasi</strong> yang berada di bawah lalu klik tombol <strong>Bayar dengan QRIS</strong></p>
+                        <p>2. Kemudian akan terlihat QR Code di layar</p>
+                        <p>3. Buka Aplikasi Dompet Elektronik yang dimiliki dan mendukung fasilitas QRIS</strong></p>
+                        <p>4. Pindai/Scan QR Code dari QRIS tersebut</p>
+                        <p>5. Periksa kembali detail pembayaran, lalu konfirmasi dan bayar</p>
+                        <p>6. Transaksi berhasil.</p>
+                      </div>
+
+                      <form action="" method="post">
+
+                      <div class="d-grid gap-2 mt-3">
+                            <label for="inputText" class="col-sm col-form-label"><strong>Masukkan Nominal Donasi</strong></label>
+                            <div class="col-sm">
+                              <input type="text" class="form-control" value="" name="nominal">
+                            </div>
+                          </div>
+                      <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-primary" type="submit" name="btn-sbt-5">Bayar dengan QRIS</button>
                       </div>
                       
                     </form>
@@ -236,14 +329,119 @@
 include('../conf/koneksi.php');
 
 if(isset($_POST['btn-sbt'])){
-    
+    $query = "SELECT bank FROM pembayaran";
+    $result = mysqli_query($koneksi, $query);
+    if ($result) {
+      $row = mysqli_fetch_assoc($result);
+      $bank = $row['bank'];
+  
+      // Menambahkan nilai dengan 1
+      $tbank = $bank + 1;
+  
+      // Update nilai yang sudah ditambahkan ke database
+      $updateQuery = "UPDATE pembayaran SET bank ='$tbank'";
+      $updateResult = mysqli_query($koneksi, $updateQuery);
+  }
     $nominal = $_POST['nominal'];
     $id_gd = $_GET['id_gd'];
     $email = $_GET['email'];
+    
 
     $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
     mysqli_query($koneksi, $query_sql);
     echo "<script>window.location.href='pembayaran.php?nominal=$nominal'</script>";    
+}
+elseif(isset($_POST['btn-sbt-2'])){
+  $query = "SELECT qris FROM pembayaran";
+  $result = mysqli_query($koneksi, $query);
+  if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $qris = $row['qris'];
+
+    // Menambahkan nilai dengan 1
+    $tqris = $qris + 1;
+
+    // Update nilai yang sudah ditambahkan ke database
+    $updateQuery = "UPDATE pembayaran SET qris ='$tqris'";
+    $updateResult = mysqli_query($koneksi, $updateQuery);
+}
+  $nominal = $_POST['nominal'];
+  $id_gd = $_GET['id_gd'];
+  $email = $_GET['email'];
+  
+
+  $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
+  mysqli_query($koneksi, $query_sql);
+  echo "<script>window.location.href='pembayaranQris.php?nominal=$nominal'</script>";    
+}
+elseif(isset($_POST['btn-sbt-3'])){
+  $query = "SELECT gopay FROM pembayaran";
+  $result = mysqli_query($koneksi, $query);
+  if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $gopay = $row['gopay'];
+
+    // Menambahkan nilai dengan 1
+    $tgopay = $gopay + 1;
+
+    // Update nilai yang sudah ditambahkan ke database
+    $updateQuery = "UPDATE pembayaran SET gopay ='$tgopay'";
+    $updateResult = mysqli_query($koneksi, $updateQuery);
+}
+  $nominal = $_POST['nominal'];
+  $id_gd = $_GET['id_gd'];
+  $email = $_GET['email'];
+  
+
+  $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
+  mysqli_query($koneksi, $query_sql);
+  echo "<script>window.location.href='pembayaranGopay.php?nominal=$nominal'</script>";    
+}
+elseif(isset($_POST['btn-sbt-4'])){
+  $query = "SELECT ovo FROM pembayaran";
+  $result = mysqli_query($koneksi, $query);
+  if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $ovo = $row['ovo'];
+
+    // Menambahkan nilai dengan 1
+    $tovo = $ovo + 1;
+
+    // Update nilai yang sudah ditambahkan ke database
+    $updateQuery = "UPDATE pembayaran SET ovo ='$tovo'";
+    $updateResult = mysqli_query($koneksi, $updateQuery);
+}
+  $nominal = $_POST['nominal'];
+  $id_gd = $_GET['id_gd'];
+  $email = $_GET['email'];
+  
+
+  $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
+  mysqli_query($koneksi, $query_sql);
+  echo "<script>window.location.href='pembayaranOvo.php?nominal=$nominal'</script>";    
+}
+elseif(isset($_POST['btn-sbt-5'])){
+  $query = "SELECT dana FROM pembayaran";
+  $result = mysqli_query($koneksi, $query);
+  if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $dana = $row['dana'];
+
+    // Menambahkan nilai dengan 1
+    $tdana = $dana + 1;
+
+    // Update nilai yang sudah ditambahkan ke database
+    $updateQuery = "UPDATE pembayaran SET dana ='$tdana'";
+    $updateResult = mysqli_query($koneksi, $updateQuery);
+}
+  $nominal = $_POST['nominal'];
+  $id_gd = $_GET['id_gd'];
+  $email = $_GET['email'];
+  
+
+  $query_sql = "INSERT INTO berdonasi (email, id_gd, jumlah_donasi) VALUES ('$email','$id_gd','$nominal')";
+  mysqli_query($koneksi, $query_sql);
+  echo "<script>window.location.href='pembayaranDana.php?nominal=$nominal'</script>";    
 }else{
     echo "Pendaftaran Gagal";
 }
