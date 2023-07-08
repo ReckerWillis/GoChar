@@ -47,7 +47,7 @@
       <div class="d-flex flex-column">
         <div class="profile">
           <br></br>
-          <h1 class="text-light"><a href="../- Fajar/login.html">Gochar</a></h1>
+          <h1 class="text-light"><a href="iniadmin_copy.php">Gochar</a></h1>
           <p class="text-light text-center">Admin</p>
           
 
@@ -79,6 +79,44 @@
     <main id="main">
       <!-- ======= Data User ======= -->
       <section id="user" class="user">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card" >
+          <div class="card-body">
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#4FA8A8" class="bi bi-people-fill" viewBox="0 0 16 16" style="float:left;">
+  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+</svg> 
+          <div style="margin-left:90px;">
+           <h3 class="card-title text-lg font-bold">Jumlah User</h3>
+           <?php $queryuser = "SELECT COUNT(*) AS totaluser FROM user";
+                  $resultuser = $koneksi->query($queryuser);
+                  $totaluser = $resultuser->fetch_assoc()['totaluser'];?>
+            <h4 class="card-text" style="color:#0079FF;">
+            <span><?php echo $totaluser; ?></span> user
+            </h4>
+            </div>
+        </div>
+        </div>
+      </div> 
+      <div class="col-md-6">
+          <div class="card">
+          <div class="card-body">
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#4FA8A8" class="bi bi-collection-fill" viewBox="0 0 16 16" style="float:left;">
+  <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/>
+</svg>
+          <div style="margin-left:90px;">
+           <h3 class="card-title text-lg font-bold">Jumlah galang donasi</h3>
+           <?php $querygd = "SELECT COUNT(*) AS totalgd FROM galang_donasi";
+                  $resultgd = $koneksi->query($querygd);
+                  $totalgd = $resultgd->fetch_assoc()['totalgd'];?>
+            <h4 class="card-text" style="color:#0079FF;">
+            <span><?php echo $totalgd; ?></span> galang donasi
+            </h4>
+          </div>
+        </div>
+        </div>
+      </div>
+  </div>
         <div class="container">
           <div class="section-title">
             <h2>Data User</h2>
@@ -89,7 +127,9 @@
               <?php include('conf/koneksi.php'); ?>
                 <?php
                 $query=mysqli_query($koneksi,"SELECT * FROM user")?>
-  
+
+
+            <div class="table-responsive">
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
@@ -120,10 +160,11 @@
                         <td>
                         ";
                         $no++;
-                        ?><a href="hapususer.php?email=<?php echo $email; ?>" onClick="return confirm('Anda yakin akan mengapus data ini?');">Hapus</a></td></tr>
+                        ?><a href="hapususer.php?email=<?php echo $email; ?>" onClick="return confirm('Anda yakin akan menghapus data ini?');">Hapus</a></td></tr>
                       <?php
                       }?>
               </table>
+            </div>
   
               </div>
             </div>
@@ -147,6 +188,7 @@
                 <?php
                 $query=mysqli_query($koneksi,"SELECT * FROM galang_donasi")?>
   
+            <div class="table-responsive">
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
@@ -181,10 +223,11 @@
                         <td>
                         ";       
               $no++;
-              ?><a href="hapusgd.php?id_gd=<?php echo $id_gd; ?>" onClick="return confirm('Anda yakin akan mengapus data ini?');">Hapus</a></td></tr>
+              ?><a href="hapusgd.php?id_gd=<?php echo $id_gd; ?>" onClick="return confirm('Anda yakin akan menghapus data ini?');">Hapus</a></td></tr>
             <?php
             }?>
           </table>
+        </div>
           </div>
          </div>
           </div>
@@ -231,7 +274,7 @@
                         <td><a href='ubahmisi.php?id_misi=$id_misi'>Edit</a> | 
                         ";
                         $no++;
-                        ?><a href="hapusmisi.php?id_misi=<?php echo $id_misi; ?>" onClick="return confirm('Anda yakin akan mengapus data ini?');">Hapus</a></td></tr>
+                        ?><a href="hapusmisi.php?id_misi=<?php echo $id_misi; ?>" onClick="return confirm('Anda yakin akan menghapus data ini?');">Hapus</a></td></tr>
                       <?php
                       }?>
               </table>

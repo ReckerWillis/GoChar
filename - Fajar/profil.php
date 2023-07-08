@@ -45,7 +45,7 @@ session_start();
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="donasi.html" class="logo d-flex align-items-center">
+        <a href="../- Hafiz/donasi.php" class="logo d-flex align-items-center">
           <img src="../assets/img/gocharrrr.png" alt="gocharlogo" />
           <span class="d-none d-lg-block">GoChar</span>
         </a>
@@ -74,7 +74,7 @@ session_start();
               <a href="../- Eki/menu_buatGalangDana.php"> <i class="bi bi-circle"></i><span>Buat Galang Dana</span> </a>
             </li>
             <li>
-              <a href="menu_galangdanasaya.html"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
+              <a href="../- Eki/menu_galangdanasaya.php"> <i class="bi bi-circle"></i><span>Galang Dana Saya</span> </a>
             </li>
           </ul>
         </li>
@@ -119,7 +119,7 @@ session_start();
   <h1>Profile</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="../- Hafiz/donasi.php">Home</a></li>
       <li class="breadcrumb-item active">Profile</li>
     </ol>
   </nav>

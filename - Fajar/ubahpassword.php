@@ -5,7 +5,7 @@ session_start();
 
 if (!(isset($_SESSION['email']) || $_SESSION['email'] == ''))
 {
-    header("location:pengaturan.php");
+    header("location:profil.php");
 }
 
 include "../conf/koneksi.php";
@@ -13,16 +13,17 @@ include "../conf/koneksi.php";
 $passwordbaru = mysqli_real_escape_string($koneksi, $_POST['passwordbaru']);
 $konfirmasipassword= mysqli_real_escape_string($koneksi, $_POST['konfirmasipassword']);
 $email = mysqli_real_escape_string($koneksi, $_SESSION['email']);
+$passwordlama = mysqli_real_escape_string($koneksi, $_POST['passwordlama']);
 
 if ($passwordbaru <> $konfirmasipassword)
 {
     echo "<script> alert ('maaf password baru dan konfirmasi tidak sama!');
-    document.location ='pengaturan.php'</script>";
+    document.location ='profil.php'</script>";
 }
 else if (mysqli_query($koneksi, "UPDATE user SET password='$passwordbaru' WHERE email='$email'"))
 {
     echo "<script> alert ('password berhasil diubah!');
-    document.location ='pengaturan.php'</script>";
+    document.location ='profil.php'</script>";
 }
 else
 {
@@ -56,14 +57,14 @@ if ($data){
 
         if($ubah){
             echo "<script> alert ('password berhasil diubah!');
-            document.location ='pengaturan.php'</script>";
+            document.location ='profil.php'</script>";
         }
     }else{
         echo "<script> alert ('maaf password baru dan konfirmasi tidak sama!');
-        document.location ='pengaturan.php'</script>";
+        document.location ='profil.php'</script>";
     }
 }else {
         echo "<script> alert ('maaf password lama anda tidak sama/tidak teradaftar');
-        document.location ='pengaturan.php'</script>";
+        document.location ='profil.php'</script>";
 }
 ?> -->
