@@ -232,7 +232,7 @@ $email = $_SESSION['email']
                     <select id="kategori" class="form-select" name="kategori" aria-label="Default select example" required>
                       <option selected aria-placeholder=""></option>
                       <option value="bantuan pendidikan">Bantuan Pendidikan</option>
-                      <option value="bencana alam">Bencan Alam</option>
+                      <option value="bencana alam">Bencana Alam</option>
                       <option value="difabel">Difabel</option>
                       <option value="kemanusiaan">Kemanusiaan</option>
                       <option value="panti asuhan">Panti Asuhan</option>

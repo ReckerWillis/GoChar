@@ -143,12 +143,43 @@
         <?php $ambil = $koneksi->query("SELECT * FROM galang_donasi ORDER BY id_gd DESC LIMIT 1;"); ?>
         <?php while($per_data = $ambil->fetch_assoc()){?>
           
-          <div class="col-md-10 mx-auto" >
+          /*<div class="col-md-10 mx-auto" >
             <div class="card" >
               <h6 class="card-title">Yakin Galang Danamu Sudah benar?</h6>
               <img src="assets/img/<?php echo $per_data['foto']?>"class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title text-center"><?php echo $per_data['judul']?></h5>
+              <h5 class="card-title text-center"><?php echo $per_data['judul']?></h5>*/
+
+              <div class="col-md-10 mx-auto">
+    <div class="card">
+        <h6 class="card-title">Yakin Galang Danamu Sudah benar?</h6>
+        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['fileToUpload'])) {
+            $targetDir = "assets/img/"; // Folder tempat menyimpan gambar
+            $targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        
+            // Cek apakah file gambar valid atau bukan
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if ($check !== false) {
+                echo "<img src='assets/img/" . basename($_FILES["fileToUpload"]["name"]) . "' class='card-img-top' alt='...'>";
+                $uploadOk = 1;
+            } else {
+                echo "File bukan gambar.";
+                $uploadOk = 0;
+            }
+        }
+        ?>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title text-center"><?php echo $per_data['judul']; ?></h5>
+        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Gambar" name="submit">
+        </form>
+    </div>
+</div>
+
               
               <div class="row">
                 <div class="col-md-8"><p class="card-text">Rp 50000000 Terkumpul dari Rp<?php echo $per_data['target_donasi']?></p></div>
