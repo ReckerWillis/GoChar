@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2023 at 02:27 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Waktu pembuatan: 10 Jul 2023 pada 15.40
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berdonasi`
+-- Struktur dari tabel `berdonasi`
 --
 
 CREATE TABLE `berdonasi` (
@@ -32,10 +32,10 @@ CREATE TABLE `berdonasi` (
   `jumlah_donasi` int(50) NOT NULL,
   `id_gd` int(20) NOT NULL,
   `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `berdonasi`
+-- Dumping data untuk tabel `berdonasi`
 --
 
 INSERT INTO `berdonasi` (`id_berdonasi`, `jumlah_donasi`, `id_gd`, `email`) VALUES
@@ -67,17 +67,18 @@ INSERT INTO `berdonasi` (`id_berdonasi`, `jumlah_donasi`, `id_gd`, `email`) VALU
 (130, 100, 148, 'Dita@gmail.com'),
 (131, 100, 148, 'Dita@gmail.com'),
 (132, 100, 145, 'javier@gmail.com'),
-(133, 100, 148, 'Dita@gmail.com');
+(133, 100, 148, 'Dita@gmail.com'),
+(134, 100, 148, 'Dita@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galang_donasi`
+-- Struktur dari tabel `galang_donasi`
 --
 
 CREATE TABLE `galang_donasi` (
   `id_gd` int(20) NOT NULL,
-  `kategori` enum('pendidikan','bencana alam','difabel','kemanusiaan','panti asuhan','kesehatan') NOT NULL,
+  `kategori` enum('bantuan pendidikan','bencana alam','difabel','kemanusiaan','panti asuhan','bantuan kesehatan') NOT NULL,
   `judul` varchar(50) NOT NULL,
   `cerita` text NOT NULL,
   `foto` varchar(255) NOT NULL,
@@ -88,44 +89,28 @@ CREATE TABLE `galang_donasi` (
   `durasi` varchar(255) NOT NULL,
   `rincian` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `galang_donasi`
+-- Dumping data untuk tabel `galang_donasi`
 --
 
 INSERT INTO `galang_donasi` (`id_gd`, `kategori`, `judul`, `cerita`, `foto`, `penerima`, `tujuan_donasi`, `lokasi`, `target_donasi`, `durasi`, `rincian`, `email`) VALUES
-(142, 'bencana alam', 'Bantu Bencana Krakatau', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'gunung.jpg', 'Badan Kemasyarakatan', 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'palembang', '1000000000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', 'javier@gmail.com'),
-(145, 'bencana alam', 'Bantu Bencana Krakatau', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'gunung.jpg', 'Badan Kemasyarakatan', 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'palembang', '1000000000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', 'javier@gmail.com'),
-(148, 'kemanusiaan', 'dadwadwqd', 'asdwadqwd', 'RabbitSky_Wallpaper-1080.png', 'asdsads', 'sdsadsa', 'dsadasd', '1000000000', '30hari', 'dasdsadd', 'Dita@gmail.com');
+(148, 'kemanusiaan', 'dadwadwqd', 'asdwadqwd', 'RabbitSky_Wallpaper-1080.png', 'asdsads', 'sdsadsa', 'dsadasd', '1000000000', '30hari', 'dasdsadd', 'Dita@gmail.com'),
+(150, 'difabel', 'gkrngrgneglnergkr', 'h', 'card.jpg', 'hhh', 'hh', 'hhh', '77', '7hari', 'hh', 'javier@gmail.com'),
+(153, 'kemanusiaan', 'frfrfrfrfrfrfr', 'nvknenjlrnvjenvjrlenvjervljrev', 'rumah-roboh.jpg', 'dtddtodtodto', 'rvrvrvfddvdfvfdvvfdvfd', 'ewfwefewfewfewfewfewf', '100000000', '7hari', 'eifheifefeifbejfbewfb', 'javier@gmail.com'),
+(155, 'bantuan pendidikan', 'yuiuiyuiyu', 'dwwewfwefewfewf', 'gunung.jpg', 'rvrervrevreev', 'vfdvfdvfdvfdvfdvbb', 'bgfbgfbffbgfbfb', '10000000', '7hari', 'ivjvrvoievrrejvoir', 'javier@gmail.com'),
+(156, 'bencana alam', 'eregdvfdbbgfbfb', 'efwewfewfwef', 'ngemis.jpg', 'dtddtodtodto', 'fewfewewfewfwfewf', 'fewfewewfewfewf', '10000000', '7hari', 'efwfewfwefefewf', 'javier@gmail.com'),
+(157, 'panti asuhan', 'fefwefwefewfewf', 'ffdbdgbdgbgbddfbd', 'slides-1.jpg', 'fkneklfneklfnklenfklenfkelfnekf', 'oewiejwioewjfiewjfieofefoe', 'kdsfjksdkfdjskfjdsfjsdfj', '10000000000', '7hari', 'fejfewipfjwepfjepfwepfjewp', 'javier@gmail.com'),
+(158, 'bantuan kesehatan', 'bgb gb gbgbgbgnbgnbg', 'gbgbfbgfbgfbg', 'Rahmat.png', 'ggtgtjgntjgntjg', 'njbgnbjgfbnfgjbngfjbngf', 'tigorgtigjigej', '10000000', '7hari', 'r4r4r43r43rrgreggr', 'javier@gmail.com'),
+(159, 'bencana alam', 'yuiuiyuiyu', 'dededewdwdew', 'gunung.jpg', 'evwvewjvkwjvwkvjew', 'eedededwedewd', 'ececewcwc', '1000000', '7hari', 'ececwcwecewcwec', 'javier@gmail.com'),
+(160, 'bantuan pendidikan', 'jgnjgtnjgrkngjktgnt', 'gkbgbfnjkbngfjkb', 'foto.jpeg', 'jewfnewjfnewjifnewifnewifew', 'jkvbjervbekvberkhvbe', 'rjevreivreivrei', '1000000', '7hari', 'efeufhuefhuef', 'javier@gmail.com'),
+(161, 'bantuan pendidikan', 'jgnjgtnjgrkngjktgnt', 'gkbgbfnjkbngfjkb', 'banjir-di-santa-catarina-brasil-2_169.jpeg', 'jewfnewjfnewjifnewifnewifew', 'jkvbjervbekvberkhvbe', 'rjevreivreivrei', '1000000', '7hari', 'efeufhuefhuef', 'javier@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `misi`
---
-
-CREATE TABLE `misi` (
-  `id_misi` int(10) NOT NULL,
-  `judul` varchar(255) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `poin` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `misi`
---
-
-INSERT INTO `misi` (`id_misi`, `judul`, `deskripsi`, `poin`) VALUES
-(3, 'ubah profile dek', 'Lorems ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 50),
-(5, 'Ubah nama', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 9),
-(6, 'Mengubah password', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 5),
-(69, 'Membuat Donasi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 5);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pembayaran`
+-- Struktur dari tabel `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -134,32 +119,19 @@ CREATE TABLE `pembayaran` (
   `OVO` int(11) NOT NULL,
   `DANA` int(11) NOT NULL,
   `QRIS` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pembayaran`
+-- Dumping data untuk tabel `pembayaran`
 --
 
 INSERT INTO `pembayaran` (`Bank`, `Gopay`, `OVO`, `DANA`, `QRIS`) VALUES
-(15, 20, 15, 18, 7);
+(15, 20, 15, 19, 7);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sum`
---
-
-CREATE TABLE `sum` (
-  `id_sum` int(10) NOT NULL,
-  `total_poin` int(10) NOT NULL,
-  `id_misi` int(10) NOT NULL,
-  `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -170,25 +142,24 @@ CREATE TABLE `user` (
   `noHp` varchar(50) NOT NULL,
   `pekerjaan` varchar(50) NOT NULL,
   `foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`email`, `password`, `username`, `NIK`, `noHp`, `pekerjaan`, `foto`) VALUES
-('', '', '', '', '', '', ''),
 ('Dita@gmail.com', 'Dita', '123', 'wdawdd', '13123123', '12', ''),
 ('Eki@Yahuuu.com', '1234', 'rekicuy', '202020202002022', '7678968', 'ceo', ''),
 ('fajar@gmail.com', '111', 'fajar', '77777777777777', '0812345678', 'nganggur', ''),
-('javier@gmail.com', '22', 'javier', '1231242343253221', '081231223412', 'mahasiswa', '');
+('javier@gmail.com', '22', 'javier', '12311312', '123312321', 'ngfngjbngfjbngfj', 'messages-3.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `berdonasi`
+-- Indeks untuk tabel `berdonasi`
 --
 ALTER TABLE `berdonasi`
   ADD PRIMARY KEY (`id_berdonasi`),
@@ -196,70 +167,49 @@ ALTER TABLE `berdonasi`
   ADD KEY `email` (`email`);
 
 --
--- Indexes for table `galang_donasi`
+-- Indeks untuk tabel `galang_donasi`
 --
 ALTER TABLE `galang_donasi`
   ADD PRIMARY KEY (`id_gd`),
   ADD KEY `email` (`email`);
 
 --
--- Indexes for table `misi`
---
-ALTER TABLE `misi`
-  ADD PRIMARY KEY (`id_misi`);
-
---
--- Indexes for table `sum`
---
-ALTER TABLE `sum`
-  ADD PRIMARY KEY (`id_sum`),
-  ADD KEY `id_misi` (`id_misi`,`email`),
-  ADD KEY `2` (`email`);
-
---
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `berdonasi`
+-- AUTO_INCREMENT untuk tabel `berdonasi`
 --
 ALTER TABLE `berdonasi`
-  MODIFY `id_berdonasi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id_berdonasi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
--- AUTO_INCREMENT for table `galang_donasi`
+-- AUTO_INCREMENT untuk tabel `galang_donasi`
 --
 ALTER TABLE `galang_donasi`
-  MODIFY `id_gd` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+  MODIFY `id_gd` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `berdonasi`
+-- Ketidakleluasaan untuk tabel `berdonasi`
 --
 ALTER TABLE `berdonasi`
   ADD CONSTRAINT `berdonasi_ibfk_1` FOREIGN KEY (`email`) REFERENCES `user` (`email`);
 
 --
--- Constraints for table `galang_donasi`
+-- Ketidakleluasaan untuk tabel `galang_donasi`
 --
 ALTER TABLE `galang_donasi`
   ADD CONSTRAINT `galang_donasi_ibfk_1` FOREIGN KEY (`email`) REFERENCES `user` (`email`);
-
---
--- Constraints for table `sum`
---
-ALTER TABLE `sum`
-  ADD CONSTRAINT `1` FOREIGN KEY (`id_misi`) REFERENCES `misi` (`id_misi`),
-  ADD CONSTRAINT `2` FOREIGN KEY (`email`) REFERENCES `user` (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
