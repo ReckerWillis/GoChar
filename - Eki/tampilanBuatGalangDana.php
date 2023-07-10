@@ -124,12 +124,12 @@ session_start();
           <div class="col-md-10 mx-auto" >
             <div class="card" >
               <h6 class="card-title text-center">Yakin Galang Danamu Sudah benar?</h6>
-              <img src="Image/<?php echo $per_data['foto']?>"class="card-img-top" alt="...">
+              <img src="../assets/img/<?php echo $per_data['foto']?>"class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title text-center"><?php echo $per_data['judul']?></h5>
               
               <div class="row">
-                <div class="col-md-8"><p class="card-text">Rp 50000000 Terkumpul dari Rp<?php echo $per_data['target_donasi']?></p></div>
+                <div class="col-md-8"><p class="card-text">Rp - Terkumpul dari Rp<?php echo $per_data['target_donasi']?></p></div>
                 <div class="col-md-4"><p class="card-text text-end"><?php echo $per_data['durasi']?></p></div>
               </div>
               <br>

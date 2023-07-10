@@ -78,20 +78,7 @@ include('../conf/koneksi.php');
           </ul>
         </li>
         <!-- End GalangDana Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="../- Javier/leaderboard.php">
-            <i class="bi bi-trophy"></i>
-            <span>Peringkat</span>
-          </a>
-        </li>
-        <!-- End Papan Peringkat Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="../- Javier/misi.php">
-            <i class="bi bi-activity"></i>
-            <span>Misi</span>
-          </a>
-        </li>
-        <!--end misi-->
+        
         <li class="nav-item">
           <a class="nav-link collapsed" href="../- Fajar/profil.php">
             <i class="bi bi-person"></i>

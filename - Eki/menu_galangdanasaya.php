@@ -54,14 +54,6 @@ $email = $_SESSION['email']
       </div>
       <!-- End Logo -->
 
-      <div class="search-bar">
-        <form class="search-form d-flex align-items-center" method="POST" action="#">
-          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
-          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-        </form>
-      </div>
-      <!-- End Search Bar -->
-
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
           <li class="nav-item d-block d-lg-none">
@@ -99,20 +91,7 @@ $email = $_SESSION['email']
           </ul>
         </li>
         <!-- End GalangDana Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="../- Javier/leaderboard.php">
-            <i class="bi bi-trophy"></i>
-            <span>Peringkat</span>
-          </a>
-        </li>
-        <!-- End Papan Peringkat Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="../- Javier/misi.php">
-            <i class="bi bi-activity"></i>
-            <span>Misi</span>
-          </a>
-        </li>
-        <!--end misi-->
+        
         <li class="nav-item">
           <a class="nav-link collapsed" href="../- Fajar/profil.php">
             <i class="bi bi-person"></i>

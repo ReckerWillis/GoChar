@@ -79,20 +79,7 @@ session_start();
           </ul>
         </li>
         <!-- End GalangDana Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="../- Javier/leaderboard.php">
-            <i class="bi bi-trophy"></i>
-            <span>Peringkat</span>
-          </a>
-        </li>
-        <!-- End Papan Peringkat Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="../- Javier/misi.php">
-            <i class="bi bi-activity"></i>
-            <span>Misi</span>
-          </a>
-        </li>
-        <!--end misi-->
+  
         <li class="nav-item">
           <a class="nav-link" href="../- Fajar/profil.php">
             <i class="bi bi-person"></i>
@@ -182,11 +169,6 @@ session_start();
                     <div class="col-lg-3 col-md-4 label">NoTelepon</div>
                     <div class="col-lg-9 col-md-8"><?php echo $gas['noHp']?></div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Jumlah Poin</div>
-                    <div class="col-lg-9 col-md-8">50 poin</div>
-                  </div>
                 </div>
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
@@ -196,12 +178,12 @@ session_start();
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Foto profile</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="image/<?php echo $_SESSION['foto'] ?>" alt="Profile">
+                        <img src="image<?php echo $_SESSION['foto'] ?>" alt="Profile">
                         <div class="pt-2">
                           <!-- <a href="upload.php" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a> -->
                           <label for="file-upload" class="btn btn-primary btn-sm" style="border: 1px solid #ccc; display: inline-block; padding: 6px 12px; cursor: pointer"> <i class="bi bi-upload" style="color:white;"></i></label>
                           <input  name="berkas" id="file-upload" type="file" style="display: none" />                      
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                          <a href="profil.php" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
                     </div>

@@ -231,12 +231,12 @@ $email = $_SESSION['email']
                   <div class="col-sm-10">
                     <select id="kategori" class="form-select" name="kategori" aria-label="Default select example" required>
                       <option selected aria-placeholder=""></option>
-                      <option value="bantuanpendidikan">Bantuan Pendidikan</option>
-                      <option value="bencanaalam">Bencan Alam</option>
+                      <option value="bantuan pendidikan">Bantuan Pendidikan</option>
+                      <option value="bencana alam">Bencan Alam</option>
                       <option value="difabel">Difabel</option>
                       <option value="kemanusiaan">Kemanusiaan</option>
-                      <option value="pantiasuhan">Panti Asuhan</option>
-                      <option value="bantuankesehatan">Bantuan Kesehatan</option>
+                      <option value="panti asuhan">Panti Asuhan</option>
+                      <option value="bantuan kesehatan">Bantuan Kesehatan</option>
                     </select>
                     <div class="invalid-feedback">Pilih Kategori !</div>
                   </div>
